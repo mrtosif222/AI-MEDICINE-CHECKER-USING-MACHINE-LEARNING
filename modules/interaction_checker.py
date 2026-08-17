@@ -17,13 +17,15 @@ Strategy (in order):
 import pandas as pd
 import joblib
 import re
+import os
 from medicine_lookup import find_medicine
 
-INTERACTIONS_PATH = "../data/cleaned_interactions.csv"
-MODEL_PATH = "../models/interaction_model.pkl"
-VECTORIZER_PATH = "../models/vectorizer.pkl"
-LABEL_ENCODER_PATH = "../models/label_encoder.pkl"
-CATEGORY_MAP_PATH = "../data/drug_category_map.csv"
+_BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+INTERACTIONS_PATH = os.path.join(_BASE_DIR, "..", "data", "cleaned_interactions.csv")
+MODEL_PATH = os.path.join(_BASE_DIR, "..", "models", "interaction_model.pkl")
+VECTORIZER_PATH = os.path.join(_BASE_DIR, "..", "models", "vectorizer.pkl")
+LABEL_ENCODER_PATH = os.path.join(_BASE_DIR, "..", "models", "label_encoder.pkl")
+CATEGORY_MAP_PATH = os.path.join(_BASE_DIR, "..", "data", "drug_category_map.csv")
 
 _interactions_df = None
 _model = None

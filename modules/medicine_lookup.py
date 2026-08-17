@@ -17,8 +17,10 @@ LLM-generated general answer, clearly labelled as not dataset-verified.
 
 import pandas as pd
 import re
+import os
 
-MEDICINES_PATH = "../data/cleaned_medicines.csv"
+_BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MEDICINES_PATH = os.path.join(_BASE_DIR, "..", "data", "cleaned_medicines.csv")
 
 _df = None  # lazy-loaded so importing this module doesn't hit disk immediately
 
